@@ -1,0 +1,36 @@
+
+body{
+  background-color:  rgb(12, 75, 12);
+}
+
+#game {
+  width: 900px;
+  height: 450px;
+  text-align: center;
+  margin: auto;
+  margin-top: auto;
+}
+
+#game div {
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 15%;
+  height: 200px;
+  margin: 10px;
+  display: inline-block;
+  background-color: blanchedalmond;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+#tries {
+  text-align: left;
+}
+
+#highscore {
+  text-align: left;
+  color: white;
+}
