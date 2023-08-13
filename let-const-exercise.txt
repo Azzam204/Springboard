@@ -1,0 +1,12 @@
+let and const Exercise
+
+What is the difference between ***var*** and ***let***?
+	you can't redeclare using let.
+	let uses block scope and var uses function scope
+What is the difference between **var** and ***const***?
+	you can't redeclare or reassign using const
+	const uses block scope
+What is the difference between **let** and **const**?
+	you can reassign with let, const can't be reassigned or redeclared
+What is hoisting?
+	with var variables are 'hoisted' and can be accessed before they have been declared
