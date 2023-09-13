@@ -105,3 +105,43 @@ function vowelCount(str) {
 
 //   Time Complexity: O(n)
 
+
+// Part 3 - short answer
+
+// Answer the following questions
+
+// 1. True or false: n^2 + n is O(n^2).
+        true
+
+// 2. True or false: n^2 * n is O(n^3).
+        true
+
+// 3. True or false: n^2 + n is O(n).
+        false
+
+// 4. What’s the time complexity of the .indexOf array method?
+      O(n)
+
+// 5. What’s the time complexity of the .includes array method?
+      O(n)
+
+// 6. What’s the time complexity of the .forEach array method?
+      o(n)
+
+// 7. What’s the time complexity of the .sort array method?
+      o(n log n)
+
+// 8. What’s the time complexity of the .unshift array method?
+      o(n)
+    
+// 9. What’s the time complexity of the .push array method?
+      o(1)
+
+// 10. What’s the time complexity of the .splice array method?
+      o(n)
+
+// 11. What’s the time complexity of the .pop array method?
+      o(1)
+
+// 12. What’s the time complexity of the Object.keys() function?
+      o(n)
