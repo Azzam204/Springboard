@@ -1,0 +1,55 @@
+/* some colors you may find useful:
+  #115ff4
+  #060ce9
+  #28a200
+  #8d2ab5
+  #74119c */
+/* body{
+   background-image: url(./Jeopardy-Ben-Chan.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position-x: center;
+
+} */
+
+table{
+  text-align: center;
+  font-size: 12px;
+ 
+  color: white;
+  /* border-collapse: collapse; */
+  margin: auto;
+  margin-top: 100px;
+ 
+}
+
+button {
+  margin:auto;
+  display: block;
+  border-radius: 8px;
+}
+
+th, td {
+  border: solid 1px white;
+  width: 12em;
+  padding: 1em;
+  border-radius: 8px; 
+  background-color: #060ce9;
+}
+
+td {
+  height: 6em;
+  font-family: copse;
+}
+
+td:hover {
+  cursor: pointer;
+}
+
+th {
+  font-weight: bold;
+  height: 4em;
+  font-family: Helvetica;
+  text-shadow: rgb(180, 133, 12) 3px 2px 3px;
+  text-transform: uppercase;
+}
