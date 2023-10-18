@@ -11,3 +11,11 @@ def flip_case(phrase, to_swap):
         'AaaaHHH'
 
     """
+    ans = ''
+
+    for let in phrase:
+        if let.casefold() == to_swap.casefold():
+            ans += let.swapcase()
+        else:
+            ans += let
+    return ans
