@@ -27,5 +27,6 @@ def is_odd_string(word):
         >>> is_odd_string('amazing')
         True
     """
+    return len(word) % 2 != 0
 
     # Hint: you may find the ord() function useful here

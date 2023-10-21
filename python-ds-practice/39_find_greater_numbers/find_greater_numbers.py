@@ -18,4 +18,10 @@ def find_greater_numbers(nums):
 
         >>> find_greater_numbers([])
         0
-    """
+    """ 
+    ans = 0
+    for index, num1 in enumerate(nums):
+        for num2 in nums[index + 1::]:
+            if num2 > num1:
+                ans += 1
+    return ans
