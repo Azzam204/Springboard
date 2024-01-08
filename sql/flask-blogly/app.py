@@ -47,3 +47,23 @@ def create_user():
 def show_user(user_id):
     user = User.query.get_or_404(user_id)
     return render_template('details.html', user=user)
+
+@app.route('/users/<int:user_id>/edit', methods = ['POST','GET'])
+def edit_user(user_id):
+    if request.form.get('first_name'):
+        user = User.query.get_or_404(user_id)
+        user.first_name = request.form['first_name']
+        user.last_name = request.form['last_name']
+        user.image_url = request.form['image_url'] if request.form['image_url'] else user.image_url
+        db.session.add(user)
+        db.session.commit()
+        return redirect('/users')
+    else:
+        return render_template('edit_user.html', user_id = user_id)
+    
+@app.route('/users/<int:user_id>/delete')
+def delete_user(user_id):
+    user = User.query.filter_by(id = user_id)
+    user.delete()
+    db.session.commit()
+    return redirect('/users')

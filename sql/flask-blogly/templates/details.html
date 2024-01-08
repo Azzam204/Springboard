@@ -8,8 +8,11 @@
 </span>
 <span>
     <h1>{{user.first_name}} {{user.last_name}}</h1>
-    <a href="">Edit</a>
-    <a href="">Delete</a>
+    <a href="/users/{{user.id}}/edit">Edit</a>
+    <a href="/users/{{user.id}}/delete">Delete</a>
 </span>
+<div>
+    <a href="/users">Home</a>
+</div>
 
 {% endblock %}
