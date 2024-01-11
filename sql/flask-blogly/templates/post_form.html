@@ -18,8 +18,15 @@
     </div>
     <textarea name="content" id="content" cols="30" rows="4"></textarea>
     <div>
-    <a href="/users/{{user.id}}">Cancel</a>
-    <button>Add</button>
+        <ul>
+            {% for tag in tags %}
+            <li><input type="checkbox" name="tags" value="{{tag.id}}"> {{tag.name}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+    <a class="btn btn-danger btn-sm mt-1" href="/users/{{user.id}}">Cancel</a>
+    <button class="btn btn-primary btn-sm mt-1">Add</button>
     </div>
 </form>
 

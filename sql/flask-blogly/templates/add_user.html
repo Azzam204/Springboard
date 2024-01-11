@@ -5,7 +5,7 @@
 {% block content %}
 <h1>Create a user</h1>
 
-<form action="/users/new" method="POST">
+<form action="/users/new" method="POST" class="form-group">
     <div>
         <label for="first_name">First Name</label>
     </div>
@@ -24,7 +24,7 @@
     <div>
         <input type="text" name="image_url" placeholder="Provide an image of this user ">
     </div>
-    <button>Add</button>
+    <button class="btn btn-primary btn-sm mt-1">Add</button>
 </form>
 
 {% endblock %}

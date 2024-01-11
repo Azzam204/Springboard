@@ -18,8 +18,15 @@
     </div>
     <textarea name="content" id="content" cols="30" rows="4">{{post.content}}</textarea>
     <div>
-    <a href="/users/{{post.user.id}}">Cancel</a>
-    <button>Edit</button>
+        <ul>
+            {% for tag in tags %}
+            <li><input type="checkbox" name="tags" value="{{tag.id}}" {% if tag in post.tags %} checked {% endif %}> {{tag.name}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+    <a class="btn btn-danger" href="/users/{{post.user.id}}">Cancel</a>
+    <button class="btn btn-info">Edit</button>
     </div>
 </form>
 
