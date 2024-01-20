@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %} Pet details {% endblock %}
+
+{% block content %}
+
+<h1 class="display-1 text-capitalize">{{pet.name}}</h1>
+<div>
+    <img class="" height="500" width="auto" src="
+    {% if pet.photo_url %}
+    {{pet.photo_url}}
+    {% else %}
+    https://cdn.myportfolio.com/c728a553-9706-473c-adca-fa2ea3652db5/12e68d7c-545d-4718-a8ea-fa18b078ca94_rw_1200.jpg?h=c457494d606f389562232d85f277cdfd
+    {% endif %}
+    ">
+    <ul>
+        <li>Species - {{pet.species}}</li>
+        {% if pet.age %}
+        <li>Age - {{pet.age}}</li>
+        {% endif %}
+    </ul>
+</div>
+
+<form method="post">
+    {{ form.hidden_tag() }}
+
+    {% for field in form if field.widget.input_type != 'hidden'%}
+    <div class="form-group">
+      {{field.label}}
+      {% if field.name == 'available' %}
+      {{field}}
+      {% else %}
+      {{field(class_="form-control")}}
+      {% endif %}
+      {% for err in field.errors %}
+      <small class="form-text text-danger">
+        {{err}}
+      </small>
+      {% endfor %}
+    </div>
+    {% endfor %}
+    <button class="btn  btn-success mt-2">Edit</button>
+    <a href="/" class="btn btn-danger mt-2">Home</a>
+    <div class="mt-5">
+        <a href="/{{pet.id}}/delete" class="link-danger"><b>Delete pet</b></a>
+    </div>
+</form>
+
+{% endblock %}

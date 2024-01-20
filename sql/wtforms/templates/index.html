@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+<h1 class="display-1">Pets</h1>
+
+<div class="row">
+    {% for pet in pets %}
+    <div class="col-4">
+        <div>
+            <img class="img-thumbnail" src="
+            {% if pet.photo_url %}
+            {{pet.photo_url}}
+            {% else %}
+            https://cdn.myportfolio.com/c728a553-9706-473c-adca-fa2ea3652db5/12e68d7c-545d-4718-a8ea-fa18b078ca94_rw_1200.jpg?h=c457494d606f389562232d85f277cdfd
+            {% endif %}
+            ">
+        </div>
+        <span>
+            <a href="/{{pet.id}}" class="text-capitalize" style="text-decoration: none; color:rgb(120, 194, 173) ;">{{pet.name}}</a> {% if pet.available %}
+            <b>is available!</b>
+            {% else %}
+            not available!
+            {% endif %}
+        </span>
+    </div>
+{% endfor %}
+</div>
+
+<a href="/add" class="btn mt-3" style="background-color: rgb(120, 194, 173); color: white;">Add a pet</a>
+
+{% endblock %}
