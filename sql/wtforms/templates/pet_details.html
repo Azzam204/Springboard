@@ -41,9 +41,9 @@
     {% endfor %}
     <button class="btn  btn-success mt-2">Edit</button>
     <a href="/" class="btn btn-danger mt-2">Home</a>
-    <div class="mt-5">
-        <a href="/{{pet.id}}/delete" class="link-danger"><b>Delete pet</b></a>
-    </div>
+</form>
+<form action="/{{pet.id}}/delete" method="post">
+  <button class="btn btn-link link-danger mt-4"><b>Delete pet</b></button>
 </form>
 
 {% endblock %}

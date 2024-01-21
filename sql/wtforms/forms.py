@@ -6,7 +6,7 @@ class PetForm(FlaskForm):
 
     name = StringField('Pet Name', validators=[InputRequired(message='Name required')])
     species = SelectField('Species', 
-                          choices=[('cat','Cat'),('dog','Dog'),('porcupine','Porcupine')],
+                          choices=[('dog','Dog'),('cat','Cat'),('porcupine','Porcupine')],
                           validators=[InputRequired(message='Pick a species')])
     photo_url = StringField('Photo URL', validators=[Optional(),URL()])
     age = IntegerField('Age', validators=[Optional(),NumberRange(min=0, max=30)])

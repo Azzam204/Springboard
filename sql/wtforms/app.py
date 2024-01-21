@@ -54,7 +54,7 @@ def show_pet_details(pet_id):
     else:
         return render_template('pet_details.html', form = form, pet = pet)
     
-@app.route('/<int:pet_id>/delete')
+@app.route('/<int:pet_id>/delete', methods =['POST'])
 def delete_pet(pet_id):
     Pet.query.filter_by(id=pet_id).delete()
     db.session.commit()
