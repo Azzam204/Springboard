@@ -82,7 +82,7 @@ class LinkedList {
   /** insertAt(idx, val): add node w/val before idx. */
 
   insertAt(idx, val) {
-    if (idx >= this.length || idx < 0){
+    if (idx > this.length || idx < 0){
       throw new Error('Invalid entry');
     }
 
@@ -109,7 +109,7 @@ class LinkedList {
       let val = this.head;
       this.head = this.head.next;
       this.length -= 1;
-      if(this.length === 1) this.tail = this.head;
+      if(this.length < 2) this.tail = this.head;
       return val.val;
     }
 
@@ -134,6 +134,9 @@ class LinkedList {
   /** average(): return an average of all values in the list */
 
   average() {
+    if(this.length === 0){
+      return 0
+    }
     let current = this.head
     let sum = 0;
     let count = 0;
