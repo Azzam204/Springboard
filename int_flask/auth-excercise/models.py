@@ -13,10 +13,6 @@ def connect_db(app):
 
 class User(db.Model):
     __tablename__ = "users"
-
-    id = db.Column(db.Integer,
-                   primary_key=True,
-                   autoincrement=True)
     
     first_name = db.Column(db.String(30),
                       nullable=False) 
@@ -32,7 +28,6 @@ class User(db.Model):
                          primary_key=True)
     
 
-    
     password = db.Column(db.Text,
                          nullable=False)
 

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}{{user.first_name.title()}}{% endblock %}
+
+{% block content %}
+
+<h1 class="display-1">{{user.first_name.title()}}</h1>
+
+<ul class="list-group list-group-flush">
+    <li class="list-group-item">Name: {{user.first_name.title()}} {{user.last_name.title()}}</li>
+    <li class="list-group-item">Username: {{user.username.title()}}</li>
+    <li class="list-group-item">Email: {{user.email.title()}}</li>
+</ul>
+
+{% endblock %}

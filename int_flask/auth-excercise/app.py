@@ -22,14 +22,20 @@ with app.app_context():
 def handle_home():
     return redirect('/register')
 
-@app.route('/secret')
-def show_secret():
+@app.route('/users/<username>')
+def show_user(username):
 
-    if 'user_id' not in session:
+    if 'user' not in session:
         flash("Please login", "danger")
         return redirect('/login')
+    
+    user = User.query.get_or_404(username)
 
-    return render_template('secret.html')
+    if user.username != session['user']:
+        flash('You do not have access to this page', 'danger')
+        return redirect(f'/users/{session["user"]}')
+    
+    return render_template('user_details.html', user = user)
 
 @app.route('/register', methods = ['POST','GET'])
 def register_page():
@@ -53,9 +59,9 @@ def register_page():
             form.username.errors.append('Username Taken')
             form.email.errors.append('Email already exists')
             return render_template('register.html', form=form)
-        session['user_id'] = new_user.id
+        session['user'] = new_user.username
         flash('Succesfully Created Account!','success')
-        return redirect('/secret')
+        return redirect(f'/users/{new_user.username}')
     
     return render_template('register.html', form=form)
 
@@ -68,9 +74,9 @@ def login_user():
 
         user = User.authenticate(username.lower(),password)
         if user:
-            flash(f'Welcome Back, {user.first_name}','primary')
-            session['user_id'] = user.id
-            return redirect('/secret')
+            flash(f'Welcome Back, {user.first_name.title()}!','primary')
+            session['user'] = user.username
+            return redirect(f'/users/{user.username}')
         else:
             form.username.errors.append('Invalid username or password.')
         
@@ -78,6 +84,9 @@ def login_user():
 
 @app.route('/logout')
 def logout_user():
-    session.pop('user_id')
+    if 'user' not in session:
+        flash('Please sign in', 'primary')
+        return redirect('/login')
+    session.pop('user')
     flash("Goodbye!","info")
     return redirect('/login')
