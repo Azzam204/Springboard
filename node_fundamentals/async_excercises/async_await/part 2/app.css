@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(64, 137, 40);
+}
+
+.img-cont {
+    position: relative;
+    height: fit-content;
+}
+
+img {
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    margin: auto; 
+    width: fit-content;
+  }
