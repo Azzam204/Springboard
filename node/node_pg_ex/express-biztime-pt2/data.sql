@@ -39,11 +39,3 @@ CREATE TABLE comp_industry (
   comp_code text NOT NULL REFERENCES companies ON DELETE CASCADE,
   industry_code text NOT NULL REFERENCES industries ON DELETE CASCADE
 );
-
-
-SELECT industries.code, industries.industry, STRING_AGG(companies.code,',') AS company_codes FROM companies
-JOIN comp_industry
-ON companies.code = comp_industry.comp_code
-JOIN industries
-ON comp_industry.industry_code = industries.code
-GROUP BY industries.code, industries.industry;

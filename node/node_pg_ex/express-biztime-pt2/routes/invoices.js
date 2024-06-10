@@ -42,7 +42,7 @@ router.post('/', async (req, res, next) => {
         return res.status(201).json({invoice: results.rows[0]})
 
     } catch (e) {
-        return next(e)
+        return next(e)ss
     }
 })
 
