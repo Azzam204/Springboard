@@ -1,0 +1,19 @@
+.tweet { 
+    border: 2px solid rgb(134, 167, 224) ;
+    background-color: rgb(243, 219, 189);
+    width: 50vw;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 9px;
+    
+}
+
+.msg {
+    padding-left: 20px;
+    
+}
+
+.info {
+    list-style-type: none;
+    background: linear-gradient( to right, rgb(127, 129, 255) , rgb(243, 219, 189) );
+}
