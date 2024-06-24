@@ -1,0 +1,7 @@
+.Board {
+  border-collapse: collapse;
+  border: solid;
+  width : fit-content;
+  margin: auto;
+  margin-top: 20vh;
+}
