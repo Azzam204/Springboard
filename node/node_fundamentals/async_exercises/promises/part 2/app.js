@@ -23,8 +23,10 @@ $btn.on('click', function(e){
     e.preventDefault();
 
     draw.then(function(data) {
-        $(`<img src="${data.data.cards[0].image}">`).css('transform',`rotatez(${angle()}deg)`).css('z-index',`${z}`).appendTo($img);
+        $(`<img src="${data.data.cards[0].image}">`).css('transform', `rotatez(${angle()}deg)`).css('z-index', `${z}`).appendTo($img);
+        
         draw = axios.get(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=1`)
+        
         z += 1;
     })
 })
